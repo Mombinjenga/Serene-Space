@@ -8,7 +8,7 @@ const AIChat = () => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hello! I'm Serene, your AI mental health companion. How can I support you today?",
+      text: "Hello! I'm Serene, your AI mental health companion. I'm here to provide support, help you explore your feelings, and offer evidence-based coping strategies. How are you feeling today?",
       isAI: true,
     }
   ]);
@@ -26,15 +26,25 @@ const AIChat = () => {
     setMessages(prev => [...prev, userMessage]);
     setInputValue("");
     
-    // Simulate AI response
+    // Simulate AI response with mental health focus
     setTimeout(() => {
+      const responses = [
+        "I hear you, and thank you for sharing that with me. It takes courage to open up about how you're feeling. Would you like to explore what might be contributing to these feelings?",
+        "That sounds challenging. Remember that difficult emotions are temporary and valid. What has helped you cope with similar feelings in the past?",
+        "I'm here to support you through this. Sometimes when we're struggling, it helps to break things down into smaller pieces. What's one small thing that might bring you comfort right now?",
+        "Your feelings are completely valid. Let's work together to find some strategies that might help. Have you tried any breathing exercises or grounding techniques before?",
+        "Thank you for trusting me with this. Mental health is just as important as physical health, and seeking support shows strength. What would feel most helpful for you right now - talking through your thoughts, learning a coping technique, or something else?"
+      ];
+      
+      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+      
       const aiResponse = {
         id: messages.length + 2,
-        text: "I understand you're looking for support. Remember that it's completely normal to have difficult days. Would you like to talk about what's on your mind, or would you prefer some guided breathing exercises?",
+        text: randomResponse,
         isAI: true,
       };
       setMessages(prev => [...prev, aiResponse]);
-    }, 1000);
+    }, 1500);
   };
 
   return (
@@ -91,7 +101,7 @@ const AIChat = () => {
               <Input
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Share what's on your mind..."
+                placeholder="Share what's on your mind... I'm here to listen and support you."
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                 className="flex-1"
               />
