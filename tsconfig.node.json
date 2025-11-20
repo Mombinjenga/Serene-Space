@@ -1,22 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2023"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "target": "ES2022", // Set the JavaScript version the code will compile to
+    "lib": ["ES2022"], // Specify the library files included during the compilation
+    "module": "ESNext", // Define the module system to use (ECMAScript modules)
+    "skipLibCheck": true, // Skip type checking of declaration files for faster compilation
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    "moduleResolution": "bundler", // Use 'bundler' for resolving modules
+    "allowImportingTsExtensions": true, // Allow importing files with TypeScript extensions
+    "isolatedModules": true, // Ensures each file can be safely transpiled independently
+    "moduleDetection": "force", // Force TypeScript to treat files as modules
+    "noEmit": true, // Prevent emitting output files (useful for type checking only)
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true
+    "strict": true, // Enable all strict type-checking options
+    "noUnusedLocals": false, // Allow unused local variables (set to true to enforce this)
+    "noUnusedParameters": false, // Allow unused function parameters (set to true to enforce this)
+    "noFallthroughCasesInSwitch": true // Ensure switch statements handle all cases
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts"] // Specify files to be included in the compilation
 }
